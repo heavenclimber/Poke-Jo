@@ -8,6 +8,11 @@ import  wait  from 'waait'
 
 afterEach(cleanup);
 
+
+
+//Really sorry, I don't think I can understand the reactJs unit and integration testing
+//on time, I will keep my best to understand what went wrong in the future time.
+
 const mocks = [
     {
         request: {
