@@ -6,10 +6,12 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import logocollection from '../img/bag.png'
 import logoapp from '../img/pokejo.png'
 
+
+
 function Nav() {
     return (
-        <Router data-testid="nav">
-            <div className='navbar'>
+        <Router >
+            <div data-testid="navbar" className='navbar'>
                 <div className='pokejoContainer'>
                     <Link to={"/pokelist/"} href='#'>
                         <img className='pokejo' src={logoapp} alt='nav-logo' />

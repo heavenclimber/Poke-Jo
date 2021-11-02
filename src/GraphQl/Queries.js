@@ -1,4 +1,4 @@
-import {gql} from '@apollo/client'
+import {gql} from 'graphql-tag'
 
 export const LOAD_POKEMONS = gql`
 query pokemons($limit: Int, $offset: Int) {
