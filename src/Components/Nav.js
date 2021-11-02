@@ -27,7 +27,7 @@ function Nav() {
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/pokelist" component={GetPokemon} />
-                <Route path={"/pokedetail"} component={MyPokemon} />
+                <Route path={"/pokedetail"} component={DisplayPokemon} />
                 <Route path={"/mypokemon"} component={MyPokemon} />
             </Switch>
 
