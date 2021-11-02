@@ -49,7 +49,7 @@ export default function GetPokemon() {
                 }
                 return (
                         <Link key={index} to={"/pokedetail/"+val.name} className="pokemon-box" >
-                            <img style={{ backgroundImage: `url(${pokeballbg})` }} className='bouncepoke' src={val.image} />
+                            <img style={{ backgroundImage: `url(${pokeballbg})` }} className='bouncepoke' src={val.image} alt={'get'+val.name} />
                             <p className="pokemon-name"><small>#{index} </small> {val.name}</p>
                             
                             {val.next !== null && i === pokemons.length-1 ?

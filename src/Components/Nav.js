@@ -11,13 +11,13 @@ function Nav() {
         <Router data-testid="nav">
             <div className='navbar'>
                 <div className='pokejoContainer'>
-                    <Link to={"/pokelist/"}>
-                        <img className='pokejo' src={logoapp} />
+                    <Link to={"/pokelist/"} href='#'>
+                        <img className='pokejo' src={logoapp} alt='nav-logo' />
                     </Link>
                 </div>
                 <div>
-                    <Link to={"/mypokemon/"}>
-                        <img className='bagnav bouncemycollection' src={logocollection} />
+                    <Link to={"/mypokemon/"}  href='#'>
+                        <img className='bagnav bouncemycollection' src={logocollection} alt='nav-bag' />
                     </Link>
                 </div>
 

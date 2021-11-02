@@ -183,7 +183,7 @@ export default function DisplayPokemon() {
     const GetSprites = () => (
         <div className="detailSpriteContainer">
             <div className="detailSprite">
-                <img style={{ backgroundImage: `url(${pokeballbg})` }} srcSet={pokeapidetail.sprites.front_default} />
+                <img style={{ backgroundImage: `url(${pokeballbg})` }} alt='display-poke' srcSet={pokeapidetail.sprites.front_default} />
             </div>
             <h2>{pokemon.name}</h2>
         </div>
