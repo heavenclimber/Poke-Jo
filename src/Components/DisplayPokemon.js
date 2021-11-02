@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useQuery } from '@apollo/react-hooks'
+import { useQuery } from '@apollo/client'
 import { LOAD_POKEMONS_DETAIL } from '../GraphQl/Queries'
 import Skeleton from './skeleton'
 import pokeballbg from '../img/pokeball-bg.png'
@@ -193,7 +193,7 @@ export default function DisplayPokemon() {
         <div>
             <div className='detailFlex' data-testid="displaypoke">
                 {pokeapidetail.sprites ? <GetSprites /> : <Skeleton skeleclass='typesdetail skele' />}
-                {pokemon.types ? <GetTypes /> : <Skeleton skeleclass='typesdetail skele' />}
+                {pokemon.types ? <GetTypes data-testid="typestest" /> : <Skeleton skeleclass='typesdetail skele' />}
                 <div className='infonstats'>
                     {pokeapidetail.weight ? <GetInfo /> : <Skeleton skeleclass='typesdetail skele' />}
                     {pokeapidetail.stats ? <GetStats /> : <Skeleton skeleclass='typesdetail skele' />}

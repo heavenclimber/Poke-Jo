@@ -25,6 +25,7 @@ export default function GetPokemon() {
             console.log('loading');
             return <div>Loading..</div>
         }
+        console.log(error)
         if (data) {
             setPokemons(data.pokemons.results)
         }
@@ -36,7 +37,7 @@ export default function GetPokemon() {
   
 
     return (
-        <div className="pokemon-flex">
+        <div className="pokemon-flex" data-testid='pokemonlist'>
             <ToTop/>
             {pokemons.map((val, i) => {
                 i = i++;
@@ -48,7 +49,7 @@ export default function GetPokemon() {
                     index = '0' + index
                 }
                 return (
-                        <Link key={index} to={"/pokedetail/"+val.name} className="pokemon-box" >
+                        <Link key={index} to={"/pokedetail/"+val.name} data-testid='pokebox'  className="pokemon-box" >
                             <img style={{ backgroundImage: `url(${pokeballbg})` }} className='bouncepoke' src={val.image} alt={'get'+val.name} />
                             <p className="pokemon-name"><small>#{index} </small> {val.name}</p>
                             

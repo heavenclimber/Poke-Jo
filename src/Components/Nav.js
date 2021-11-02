@@ -13,12 +13,12 @@ function Nav() {
         <Router >
             <div data-testid="navbar" className='navbar'>
                 <div className='pokejoContainer'>
-                    <Link to={"/pokelist/"} href='#'>
+                    <Link to={"/pokelist/"} href='#' data-testid='homebutton'>
                         <img className='pokejo' src={logoapp} alt='nav-logo' />
                     </Link>
                 </div>
                 <div>
-                    <Link to={"/mypokemon/"}  href='#'>
+                    <Link to={"/mypokemon/"} data-testid='bagbutton'  href='#'>
                         <img className='bagnav bouncemycollection' src={logocollection} alt='nav-bag' />
                     </Link>
                 </div>
@@ -27,7 +27,7 @@ function Nav() {
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/pokelist" component={GetPokemon} />
-                <Route path={"/pokedetail"} component={DisplayPokemon} />
+                <Route path={"/pokedetail"} component={MyPokemon} />
                 <Route path={"/mypokemon"} component={MyPokemon} />
             </Switch>
 

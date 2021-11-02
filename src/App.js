@@ -1,19 +1,20 @@
 
 import './App.css';
 import { ApolloClient, ApolloProvider, InMemoryCache, HttpLink, from } from '@apollo/client'
+import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks'
 // import { ApolloProvider } from'@apollo/react-hooks'
 
-// import { onError } from '@apollo/client/link/error'
+import { onError } from '@apollo/client/link/error'
 import Nav from './Components/Nav';
 
 
-// const errorLink = onError(({ graphqlErrors, networkErrors }) => {
-//   if (graphqlErrors) {
-//     graphqlErrors.map(({ message, location, path }) => {
-//       alert('Graphql error ${message}');
-//     })
-//   }
-// })
+const errorLink = onError(({ graphqlErrors, networkErrors }) => {
+  if (graphqlErrors) {
+    graphqlErrors.map(({ message, location, path }) => {
+      alert('Graphql error ${message}');
+    })
+  }
+})
 
 const link = from([
   // errorLink,
@@ -30,12 +31,14 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="container">
-      
-        <div className='content'>
-          <Nav />
+      <ApolloHooksProvider client={client}>
+        <div className="container">
+
+          <div className='content'>
+            <Nav />
+          </div>
         </div>
-      </div>
+      </ApolloHooksProvider>
     </ApolloProvider>
   );
 }

@@ -53,7 +53,7 @@ export default function MyPokemon() {
 
 
     const DisplayPoke = () => (
-        <div className='pokemon-flex'>
+        <div className='pokemon-flex' >
             {pokemons.map((val, i) => {
                 return (
                     <div key={i} className='pokemon-box'>
@@ -78,7 +78,7 @@ export default function MyPokemon() {
     const NoPoke = () => (
         <div className='noPokemonContainer'>
             <div className='noPokemon'>
-                <img className='bouncecatch' src={nopoke} />
+                <img className='bouncecatch' alt='nopokeball' src={nopoke} />
                 <h3>NO ONE'S HERE</h3>
                 <p>Go catch your first Pokemon!</p>
             </div>
@@ -87,7 +87,7 @@ export default function MyPokemon() {
 
     return (
         <div >
-            <div className='detailFlex' style={{ marginBottom: 0 }}>
+            <div className='detailFlex' data-testid='mypokemoncontainer' style={{ marginBottom: 0 }}>
                 <h2>My Pokemon</h2>
             </div>
 
