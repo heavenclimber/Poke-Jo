@@ -14,7 +14,7 @@ export default function CatchModal({ name, data, closeModal }) {
     }, 3000)
 
     return (
-        <div className='catchModalContainer'>
+        <div className='catchModalContainer' data-testid='catchmodalcontainer'>
             {modalShow && <div className='catchModal'>
                 {caught ? <SuccessCaught name={name} data={data}  closeModal={closeModal}/> : <FailedCaught name={name} closeModal={closeModal} />}
             </div>}

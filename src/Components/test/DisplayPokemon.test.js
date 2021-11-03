@@ -1,21 +1,19 @@
 import React from "react";
-import { render } from '@testing-library/react';
+import { render, cleanup, waitFor } from '@testing-library/react';
 import "@testing-library/jest-dom/extend-expect"
 import { MockedProvider } from '@apollo/client/testing'
 import DisplayPokemon from "../DisplayPokemon"
 import { LOAD_POKEMONS_DETAIL } from './../../GraphQl/Queries'
-import  wait  from 'waait'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-
-//Really sorry, I don't think I can understand the reactJs unit and integration testing
-//on time, I will keep my best to understand what went wrong in the future time.
+afterEach(cleanup);
 
 const mocks = [
     {
         request: {
             query: LOAD_POKEMONS_DETAIL,
             variables: {
-                name: "bulbasaur"
+                name: "currPoke"
             }
         }, result: {
             data: {
@@ -77,6 +75,8 @@ describe('DisplayPokemon Component Test', () => {
         expect(display).toBeTruthy();
     });
 
+
+
     it("rendered cath button", () => {
       const { getByTestId } = render(
           <MockedProvider>
@@ -86,28 +86,35 @@ describe('DisplayPokemon Component Test', () => {
       const display = getByTestId("catchbarbutton")
       expect(display).toBeTruthy();
   });
-    
-    // it("rendered displayPokemonFetch", async () => {
-    //     const { findByText } = render(
-    //         <MockedProvider mocks={mocks} addTypename={false}>
+
+
+//   it("rendered getPokemonDetail", async () => {
+//     const { getByText } = render(
+//         <MockedProvider mocks={mocks} addTypename={false}>
+//            <Router>
+//                 <DisplayPokemon />
+//             </Router>
+//         </MockedProvider>
+//     );
+//     // await new Promise(resolve => setTimeout(resolve,1000));
+//     await waitFor(() => new Promise((res) => setTimeout(res, 0)));
+
+//     const get = getByText("bulbasaur")
+//     expect(get).toBeTruthy() ;
+
+
+// });
+
+    // it("rendered PokemonType", async () => {
+    //     const { getByTestId } = render(
+    //         <MockedProvider mocks={mocks}>
     //             <DisplayPokemon />
     //         </MockedProvider>
     //     );
-    //     const pokename = await findByText('bulbasaur');
-    //     expect(pokename).toBeInTheDocument();
+    //     await new Promise(resolve => setTimeout(resolve, 0));
+    //     const type = getByTestId("typestest")
+    //     expect(type).toBeTruthy();
     // });
-
-
-    it("rendered PokemonType", async () => {
-        const { getByTestId } = render(
-            <MockedProvider mocks={mocks}>
-                <DisplayPokemon />
-            </MockedProvider>
-        );
-        await new Promise(resolve => setTimeout(resolve, 0));
-        const type = getByTestId("typestest")
-        expect(type).toBeTruthy();
-    });
-
+  
 });
 

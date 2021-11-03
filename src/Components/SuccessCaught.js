@@ -33,7 +33,7 @@ const SuccessCaught = ({ name, data, closeModal }) => {
     }
 
     return (
-        <div className='caughtInfo'>
+        <div className='caughtInfo' data-testid='successModalTest'>
             <h2>CONGRATULATIONS!</h2>
             <p>You've Caught <span>{name}</span>!</p>
             <input className='inputNickname' onInput={e => setNickname(e.target.value)} type="text" name="name" placeholder="Give your new friend a nickname" />

@@ -6,20 +6,26 @@ import MyPokemon from "../MyPokemon"
 import  wait  from 'waait'
 
 
+const localStorageMock = {
+    getItem: jest.fn(),
+    setItem: jest.fn(),
+    clear: jest.fn()
+  };
 
-//Really sorry, I don't think I can understand the reactJs unit and integration testing
-//on time, I will keep my best to understand what went wrong in the future time.
+  global.localStorage = localStorageMock;
 
 afterEach(cleanup);
 
 describe('MyPokemon Component Test', () => {
-    it("rendered mypokemonList", async () => {
-
+    it("rendered mypokemonListContainer", async () => {
         const { getByTestId } = render(
                 <MyPokemon />
         );
         const get = getByTestId("mypokemoncontainer")
         expect(get).toBeTruthy();
     });
-
+    console.log(global.localStorage)
+    it("rendered getLocalStorage", async () => {
+        expect(localStorageMock.getItem).toBeTruthy()
+    })
 });

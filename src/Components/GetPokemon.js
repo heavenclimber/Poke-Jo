@@ -32,10 +32,7 @@ export default function GetPokemon() {
         
     }, [data]);
 
-
-
   
-
     return (
         <div className="pokemon-flex" data-testid='pokemonlist'>
             <ToTop/>
@@ -73,7 +70,6 @@ export default function GetPokemon() {
                                })}/>  : null
                             }
                         </Link>
-
                 );
             })}
               

@@ -189,6 +189,8 @@ export default function DisplayPokemon() {
         </div>
     )
 
+    console.log(pokeapidetail)
+
     return (
         <div>
             <div className='detailFlex' data-testid="displaypoke">
